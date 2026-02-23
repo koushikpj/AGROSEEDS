@@ -3,7 +3,7 @@ from .category import Category
 class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
-    phoneno = models.CharField(max_length=10, default='9876543210')
+    phoneno = models.CharField(max_length=10, default='+916304572667')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     description = models.CharField(max_length=200, default='Price Per kg', blank=True)
     image = models.ImageField(upload_to='uploads/products/')

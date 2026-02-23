@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+<head>
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Your Search Query");
+	formObj.t1.focus();
+	return false;
+	}
+		
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+</head>
+<div class="container-fluid">
+  <div class="row">
+    <!--filters-->
+     
+
+    <!--All products-->
+    <div id="products" class="col-lg-10 mx-auto">
+ <form name ="frm" method="post" action="FeedbackAction" onsubmit="return validate(this);">
+		<!-- start content -->
+		<div id="content">
+		 
+			 
+			
+	{% csrf_token %}
+		
+					
+			<table align="center">
+<tr><td>User Name</td><td><input type="text" name="t0" value={{username.username}}></td></tr>
+<tr><td>Feedback</td><td><textarea rows=20 name="t1" cols=150></textarea></td></tr>
+
+</td></tr>
+<tr><td colspan=2><center><input type="submit" value="Submit"></center></td>
+</tr></table>
+</form>
+     
+       
+          </div>
+        </div>
+              </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
